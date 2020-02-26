@@ -20,20 +20,25 @@ def GetVariables():
 
                 Content=FileContent.readlines()
 
-                i=0
+                #initializing
+                
                 ListPosition=[]
                 ListInstruction=[]
+
                 
         for i,x in enumerate(Content):
 
                 if i==0:
                         GridLenth=x.replace('\n', '')
-                        
+
+
+                #Even lines are Coordinates        
                 elif i%2==0:
                         
                         Aux=Content[i].replace('\n', '')
                         ListInstruction.append(Aux)
-                        
+
+                #Odd lines are Instructions
                 else:
                         Aux=Content[i].replace('\n', '')
                         ListPosition.append(Aux)
@@ -204,6 +209,7 @@ def TurnRover(X , Y , C , CurrentInstruction):
         X = int(X)
         Y = int(Y)
 
+        #Converting to uppercase
         C = C.upper()
 
         CurrentInstruction = CurrentInstruction.upper()
